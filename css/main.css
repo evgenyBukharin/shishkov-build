@@ -6,6 +6,17 @@
 	--white-color: #fff;
 	--black-color: #000;
 }
+.custom-checkbox__field:checked + .custom-checkbox__content::after {
+	opacity: 1;
+}
+.custom-checkbox__field:focus + .custom-checkbox__content::before {
+	outline: red solid 2px;
+	outline-offset: 2px;
+}
+.custom-checkbox__field:disabled + .custom-checkbox__content {
+	opacity: 0.4;
+	pointer-events: none;
+}
 @font-face {
 	font-family: Prata;
 	src: url(../fonts/prata400.woff2) format("woff2");
@@ -59,10 +70,68 @@ a {
 .site-container {
 	overflow: hidden;
 }
+.is-hidden {
+	display: none !important;
+}
+.btn-reset {
+	border: none;
+	padding: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+.list-reset {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.input-reset {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	border-radius: 0;
+	background-color: #fff;
+}
+.input-reset::-webkit-search-cancel-button,
+.input-reset::-webkit-search-decoration,
+.input-reset::-webkit-search-results-button,
+.input-reset::-webkit-search-results-decoration {
+	display: none;
+}
+.visually-hidden {
+	position: absolute;
+	overflow: hidden;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	clip: rect(0 0 0 0);
+}
 .container {
 	margin: 0 auto;
 	padding: 0 var(--container-offset);
 	max-width: var(--container-width);
+}
+.container-1c {
+	max-width: 1140px;
+}
+.js-focus-visible :focus:not(.focus-visible) {
+	outline: 0;
+}
+.centered {
+	text-align: center;
+}
+.dis-scroll {
+	position: fixed;
+	overflow: hidden;
+	width: 100%;
+	height: 100vh;
+	-ms-scroll-chaining: none;
+	overscroll-behavior: none;
+}
+.page--ios .dis-scroll {
+	position: relative;
 }
 .hero {
 	height: 100vh;
@@ -155,6 +224,7 @@ a {
 	.hero__container {
 		padding-top: 200px;
 		padding-bottom: 260px;
+		color: #ccc;
 	}
 	.hero__logo {
 		width: 240px;
@@ -171,6 +241,7 @@ a {
 	.hero__link {
 		font-size: 20px;
 		line-height: 28px;
+		color: #ccc;
 	}
 }
 @media (max-width: 768px) {
@@ -205,7 +276,7 @@ a {
 }
 @media (max-width: 480px) {
 	.hero__container {
-		padding-top: 330px;
+		padding-top: 340px;
 		padding-bottom: 355px;
 	}
 	.hero__container-top {
@@ -235,34 +306,41 @@ a {
 		margin-left: -4px;
 	}
 }
-@media (max-width: 425px) {
+@media (max-width: 435px) {
 	.hero__container {
 		padding-top: 360px;
+		padding-bottom: 380px;
+	}
+	.hero__container-top {
+		padding-left: 10px;
+	}
+	.hero__logo {
+		width: 95px;
+		height: 62px;
+		margin-left: -14px;
+		margin-bottom: -8px;
+	}
+	.hero__job {
+		font-size: 6px;
+		line-height: 130%;
+	}
+	.hero__link,
+	.hero__name {
+		font-size: 6px;
+		line-height: 130%;
+		margin-left: 2px;
+	}
+	.hero__title {
+		font-size: 11px;
 	}
 }
 @media (max-width: 375px) {
 	.hero__container {
 		padding-top: 380px;
-		padding-bottom: 384px;
 	}
-	.hero__title {
-		font-size: 11px;
-	}
-	.hero__logo {
-		width: 110px;
-		height: 70px;
-		margin-left: -14px;
-	}
-	.hero__job {
-		font-size: 6px;
-		line-height: 10px;
-	}
-	.hero__name {
-		font-size: 9px;
-		line-height: 11px;
-	}
-	.hero__link {
-		font-size: 6px;
-		line-height: 12px;
+}
+@media (max-width: 320px) {
+	.hero__container {
+		padding-top: 400px;
 	}
 }
