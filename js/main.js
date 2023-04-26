@@ -1,4 +1,1 @@
-(() => {
-    'use strict';
-    window, document, document.documentElement, document.body;
-})();
+(()=>{"use strict";window,document,document.documentElement,document.body})();
